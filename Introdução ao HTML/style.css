@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(240, 248, 255); /* AliceBlue */
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+header {
+    background-color: rgb(0, 100, 0); /* Verde Escuro */
+    color: rgb(255, 255, 255); /* Branco */
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 5px solid rgb(255, 215, 0); /* Ouro */
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+main {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+section {
+    background-color: rgb(255, 255, 255); /* Branco */
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    text-align: justify;
+}
+
+.introducao {
+    background-color: rgb(230, 230, 250); /* Lavender */
+    border-left: 5px solid rgb(100, 149, 237); /* CornflowerBlue */
+}
+
+.historia-1 {
+    background-color: rgb(255, 240, 245); /* LavenderBlush */
+    border-left: 5px solid rgb(255, 99, 71); /* Tomato */
+}
+
+.historia-2 {
+    background-color: rgb(240, 255, 240); /* Honeydew */
+    border-left: 5px solid rgb(60, 179, 113); /* MediumSeaGreen */
+}
+
+.historia-3 {
+    background-color: rgb(255, 250, 205); /* LemonChiffon */
+    border-left: 5px solid rgb(255, 140, 0); /* DarkOrange */
+}
+
+h2, h3 {
+    color: rgb(0, 100, 0); /* Verde Escuro */
+    border-bottom: 2px solid rgb(255, 215, 0); /* Ouro */
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.imagens-copa {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.imagens-copa img {
+    width: 100%;
+    min-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background-color: rgb(0, 50, 0); /* Verde mais escuro */
+    color: rgb(200, 200, 200); /* Cinza claro */
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 5px 0;
+}
