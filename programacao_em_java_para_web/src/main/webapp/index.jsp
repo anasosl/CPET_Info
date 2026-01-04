@@ -1,5 +1,4 @@
 <form action="calcularConsumo" method="post">
-    Nome do Aluno: <input type="text" name="nome" required><br>
     <h3>Consumo Mensal (W):</h3>
     <div id="campos">
         <input type="number" name="mes0" placeholder="Janeiro">
