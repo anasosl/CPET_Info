@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">aniversario65anos</string>
+    <string name="aniversario_de_65_anos">Aniversário de 65 Anos</string>
+    <string name="visualizar_fotos">Visualizar Fotos</string>
+    <string name="local_da_festa_mapa">Local da Festa (Mapa)</string>
+    <string name="galeria_de_lembran_as">Galeria de Lembranças</string>
+    <string name="localizacao_da_festa">Localização da Festa:</string>
+    <string name="voltar_para_o_inicio">Voltar para o Início</string>
+</resources>
