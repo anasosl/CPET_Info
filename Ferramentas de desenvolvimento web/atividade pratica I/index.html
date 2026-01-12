@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolução Acadêmica - João da Terra</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; line-height: 1.6; background: #f0f2f5; }
+        .container { max-width: 600px; margin: auto; }
+        header { background: #004a8d; color: white; padding: 15px; text-align: center; border-radius: 8px; margin-bottom: 20px; }
+        .modulo { background: white; border: 1px solid #ddd; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        h3 { margin-top: 0; color: #333; }
+        progress { width: 100%; height: 20px; accent-color: #28a745; }
+        .item-tarefa { display: flex; align-items: center; gap: 10px; padding: 5px 0; border-bottom: 1px f4f4f4 solid; }
+        .percentual { font-weight: bold; color: #004a8d; float: right; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header><h1>Painel do Aluno CPET</h1></header>
+        
+        <div class="modulo" id="modulo1">
+            <h3>1. HTML5 e CSS3 <span class="percentual" id="p1">0%</span></h3>
+            <progress id="barra1" value="0" max="100"></progress>
+            <div class="lista">
+                <div class="item-tarefa"><input type="checkbox" onchange="calcular(1)"> Introdução</div>
+                <div class="item-tarefa"><input type="checkbox" onchange="calcular(1)"> Metodologia</div>
+                <div class="item-tarefa"><input type="checkbox" onchange="calcular(1)"> Atividade Prática</div>
+            </div>
+        </div>
+
+        <div class="modulo" id="modulo2">
+            <h3>2. Desenvolvimento para Dispositivos Móveis <span class="percentual" id="p2">0%</span></h3>
+            <progress id="barra2" value="0" max="100"></progress>
+            <div class="lista">
+                <div class="item-tarefa"><input type="checkbox" onchange="calcular(2)"> Android Studio</div>
+                <div class="item-tarefa"><input type="checkbox" onchange="calcular(2)"> Kotlin</div>
+                <div class="item-tarefa"><input type="checkbox" onchange="calcular(2)"> Atividade Prática</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calcular(idModulo) {
+            const container = document.getElementById('modulo' + idModulo);
+            const total = container.querySelectorAll('input[type="checkbox"]').length;
+            const marcados = container.querySelectorAll('input[type="checkbox"]:checked').length;
+            const progresso = (marcados / total) * 100;
+
+            document.getElementById('barra' + idModulo).value = progresso;
+            document.getElementById('p' + idModulo).innerText = Math.round(progresso) + "%";
+        }
+    </script>
+</body>
+</html>
