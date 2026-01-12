@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Gerenciador de Tarefas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center">
+  <h2>Progresso das Tarefas</h2>
+  
+  <ion-progress-bar [value]="taskService.getPorcentagem()" style="height: 20px; border-radius: 10px;"></ion-progress-bar>
+  
+  <p class="ion-margin-top">
+    <strong>{{ (taskService.getPorcentagem() * 100).toFixed(0) }}%</strong> das tarefas concluídas
+  </p>
+
+  <ion-footer class="ion-no-border" style="position: absolute; bottom: 20px; width: 100%; left: 0;">
+    <ion-button expand="block" (click)="irParaTarefas()" class="ion-margin">
+      Ver Minhas Tarefas 
+    </ion-button>
+  </ion-footer>
+</ion-content>

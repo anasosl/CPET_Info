@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Minhas Tarefas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="taskService.tarefas.length === 0" class="ion-padding ion-text-center">
+    <p>Nenhuma tarefa cadastrada</p>
+  </div>
+
+  <ion-list *ngIf="taskService.tarefas.length > 0">
+    <ion-item *ngFor="let item of taskService.tarefas" appHighlight>
+      <ion-checkbox slot="start" [(ngModel)]="item.concluida"></ion-checkbox>
+      <ion-input 
+        [(ngModel)]="item.titulo" 
+        [style.text-decoration]="item.concluida ? 'line-through' : 'none'">
+      </ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="adicionarTarefa()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
