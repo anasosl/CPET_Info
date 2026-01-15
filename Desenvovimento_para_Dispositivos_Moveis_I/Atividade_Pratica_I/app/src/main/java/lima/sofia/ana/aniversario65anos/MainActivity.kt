@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         webView.webViewClient = object : WebViewClient() {
+            @Deprecated("Deprecated in Java")
             override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
 
                 if (url != null && (url.startsWith("http://") || url.startsWith("https://"))) {
@@ -44,6 +45,12 @@ class MainActivity : AppCompatActivity() {
         val btnFotos = findViewById<Button>(R.id.btnVerFotos)
         btnFotos.setOnClickListener {
             val intent = Intent(this, FotosActivity::class.java)
+            startActivity(intent)
+        }
+
+        val btnEntrar = findViewById<Button>(R.id.btnEntrarMenu)
+        btnEntrar.setOnClickListener {
+            val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
         }
     }

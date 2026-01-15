@@ -1,7 +1,6 @@
 package lima.sofia.ana.aniversario65anos
 
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
 class FotosActivity : AppCompatActivity() {
@@ -9,13 +8,9 @@ class FotosActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fotos)
 
+        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.myToolbar)
+        setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = "Fotos da Festa"
-
-        val btnVoltar = findViewById<Button>(R.id.btnVoltar)
-        btnVoltar.setOnClickListener {
-            finish()
-        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
