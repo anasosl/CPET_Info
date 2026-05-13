@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeautyConnect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Beauty<span>Connect</span></div>
+        <nav>
+            <button onclick="mudarAba('empresa')">Empresa</button>
+            <button onclick="mudarAba('produtos')">Produtos</button>
+            <button onclick="mudarAba('gestao')">Gestão</button>
+            <button onclick="mudarAba('faq')">FAQ</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="empresa" class="aba ativa">
+            <h1>Apresentação da Empresa</h1>
+            <p>A BeautyConnect é uma plataforma desenvolvida para transformar consultores em empreendedores de alta performance. Facilitamos o controle de estoque das marcas Natura, Avon e O Boticário, automatizamos cálculos de lucro e integramos a comunicação entre proprietários e vendedores em um único ecossistema digital.</p>
+        </section>
+
+        <section id="produtos" class="aba">
+            <h1>Nosso Catálogo</h1>
+            <div id="vitrine-categorias">
+                </div>
+        </section>
+
+        <section id="gestao" class="aba">
+            <h1>Painel de Comissões</h1>
+            <div class="painel-calculo">
+                <p>Simulador baseado na lógica de divisão 50/50.</p>
+                <input type="number" id="custoInput" placeholder="Valor de Custo (R$)">
+                <button class="btn-acao" onclick="calcularComissao()">Calcular</button>
+                <div id="resultado"></div>
+            </div>
+        </section>
+
+        <section id="faq" class="aba">
+            <h1>Perguntas Frequentes</h1>
+            <details><summary>Qual a margem de lucro padrão?</summary><p>30% sobre o custo.</p></details>
+            <details><summary>Como funcionam os Conjuntos?</summary><p>Desconto de 10% para 2 ou mais itens.</p></details>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
