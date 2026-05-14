@@ -69,12 +69,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp" />
 
+    <Button
+        android:id="@+id/btnVerInfo"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="VISUALIZAR APP INFO"
+        android:backgroundTint="#A0522D"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/btnVerFotos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
     <WebView
         android:id="@+id/webViewMapa"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:background="#CCCCCC"
-        app:layout_constraintTop_toBottomOf="@id/btnVerFotos"
+        app:layout_constraintTop_toBottomOf="@id/btnVerInfo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="24dp" />

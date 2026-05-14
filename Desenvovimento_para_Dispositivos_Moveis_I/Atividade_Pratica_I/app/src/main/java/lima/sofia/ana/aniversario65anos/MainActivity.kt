@@ -53,5 +53,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
         }
+
+        val btnInfo = findViewById<Button>(R.id.btnVerInfo)
+        btnInfo.setOnClickListener {
+            val intent = Intent(this, InfoActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
@@ -13,50 +14,109 @@
         android:layout_height="?attr/actionBarSize"
         android:background="#FDF5E6"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:titleTextColor="?attr/colorPrimary" />
 
     <EditText
-        android:id="@+id/etDescricaoGasto"
-        android:layout_width="match_parent"
+        android:id="@+id/etMeuOrcamento"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="O que comprou? (ex: Bolo)"
-        android:layout_marginTop="30dp"
-        app:layout_constraintTop_toBottomOf="@id/myToolbar"/>
+        android:hint="Meu Orçamento (R$)"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/myToolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/etDescricaoGasto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Descrição do gasto (ex: Bolo)"
+        android:inputType="text"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/etMeuOrcamento"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/etValorGasto"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Valor (R$)"
         android:inputType="numberDecimal"
-        app:layout_constraintTop_toBottomOf="@id/etDescricaoGasto" />
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/etDescricaoGasto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnRegistrarGasto"
+        android:layout_marginEnd="8dp"/>
 
     <Button
         android:id="@+id/btnRegistrarGasto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrar"
+        app:layout_constraintTop_toTopOf="@id/etValorGasto"
+        app:layout_constraintBottom_toBottomOf="@id/etValorGasto"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/llResumo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Registrar Gasto"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:background="#E8E8E8"
+        app:layout_constraintTop_toBottomOf="@id/etValorGasto">
+
+        <TextView
+            android:id="@+id/tvTotalGastos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Valor Gasto: R$ 0.00"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#B22222" />
+
+        <TextView
+            android:id="@+id/tvSaldoRestante"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saldo Restante: R$ 0.00"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#006400"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/labelHistorico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Histórico:"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/llResumo"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/etValorGasto" />
+        android:background="#FFFFFF"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/labelHistorico"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <TextView
-        android:id="@+id/tvTotalGastos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Total: R$ 0.00"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/btnRegistrarGasto"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/tvGastos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/tvTotalGastos"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/tvGastos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nenhum gasto registrado."
+            android:textSize="14sp" />
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

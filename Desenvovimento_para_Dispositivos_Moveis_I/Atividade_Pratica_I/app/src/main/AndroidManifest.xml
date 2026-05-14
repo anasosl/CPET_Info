@@ -47,6 +47,12 @@
             android:label="Cálculo de Festa"
             android:parentActivityName=".MenuActivity"/>
 
+        <activity
+            android:name=".InfoActivity"
+            android:label="Informações"
+            android:parentActivityName=".MainActivity"/>
+
+
     </application>
 
 </manifest>

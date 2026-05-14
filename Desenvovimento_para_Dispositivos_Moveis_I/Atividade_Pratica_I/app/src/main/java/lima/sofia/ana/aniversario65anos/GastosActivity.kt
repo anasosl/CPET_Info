@@ -7,27 +7,44 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class GastosActivity : AppCompatActivity() {
-    private var totalAcumulado = 0.0
+    private var totalGasto = 0.0
+    private var meuOrcamento = 0.0
+    private var listaGastos = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gastos)
 
+        val etOrcamento = findViewById<EditText>(R.id.etMeuOrcamento)
         val etDescricao = findViewById<EditText>(R.id.etDescricaoGasto)
         val etValor = findViewById<EditText>(R.id.etValorGasto)
         val btnRegistrar = findViewById<Button>(R.id.btnRegistrarGasto)
-        val tvTotal = findViewById<TextView>(R.id.tvTotalGastos)
-        val tvGastos = findViewById<TextView>(R.id.tvGastos)
+
+        val tvTotalGasto = findViewById<TextView>(R.id.tvTotalGastos)
+        val tvSaldo = findViewById<TextView>(R.id.tvSaldoRestante)
+        val tvListaGastos = findViewById<TextView>(R.id.tvGastos)
+
+        if (GerenciadorFesta.orcamento > 0) {
+            etOrcamento.setText(GerenciadorFesta.orcamento.toString())
+        }
 
         btnRegistrar.setOnClickListener {
+            meuOrcamento = etOrcamento.text.toString().toDoubleOrNull() ?: 0.0
             val valorDigitado = etValor.text.toString().toDoubleOrNull() ?: 0.0
-            totalAcumulado += valorDigitado
-            tvTotal.text = "Total: R$ ${String.format("%.2f", totalAcumulado)}"
+
+            totalGasto += valorDigitado
+            val saldo = meuOrcamento - totalGasto
+
+            tvTotalGasto.text = "Valor Gasto: R$ ${String.format("%.2f", totalGasto)}"
+            tvSaldo.text = "Saldo Restante: R$ ${String.format("%.2f", saldo)}"
 
             val descricao = etDescricao.text.toString()
-            val valorFormatado = String.format("%.2f", valorDigitado)
-            tvGastos.text = "• $descricao - R$ $valorFormatado\n" + tvGastos.text
+            listaGastos +=
+                "• $descricao - R$ ${String.format("%.2f", valorDigitado)}\n"
 
+            tvListaGastos.text = listaGastos
+
+            GerenciadorFesta.orcamento = meuOrcamento
             etDescricao.text.clear()
             etValor.text.clear()
         }
