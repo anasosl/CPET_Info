@@ -1,0 +1,102 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.5;
+}
+.container {
+    max-width: 850px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+h1 {
+    text-align: center;
+    color: #c2185b;
+    font-size: 28px;
+    border-bottom: 3px solid #c2185b;
+    padding-bottom: 12px;
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+h2 {
+    color: #1565c0;
+    border-left: 5px solid #1565c0;
+    padding-left: 10px;
+    margin-top: 30px;
+    font-size: 20px;
+}
+p { margin-bottom: 20px; color: #616161; }
+.help-text { font-size: 13px; color: #888; margin-top: -10px; margin-bottom: 15px; }
+
+.row-dinamica {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 12px;
+    align-items: center;
+}
+input[type="text"], input[type="number"], select {
+    padding: 11px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+input[type="text"] { flex: 2; }
+input[type="number"] { flex: 0.5; min-width: 80px; }
+select { flex: 0.8; }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+th {
+    background-color: #f1f3f5;
+    font-weight: 600;
+    color: #495057;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+}
+.btn-primary { background-color: #c2185b; color: white; width: 100%; margin-top: 20px; }
+.btn-primary:hover { background-color: #a01248; }
+.btn-secondary { background-color: #6c757d; color: white; text-decoration: none; display: block; text-align: center; }
+.btn-secondary:hover { background-color: #5a6268; }
+.btn-add { background-color: #2e7d32; color: white; padding: 6px 14px; font-size: 13px; }
+.btn-add:hover { background-color: #1b5e20; }
+
+.info-box {
+    background-color: #e8f0fe;
+    border-left: 5px solid #1967d2;
+    padding: 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.resultado-container {
+    background-color: #fafafa;
+    border: 1px dashed #ccc;
+    padding: 20px;
+    border-radius: 8px;
+}
