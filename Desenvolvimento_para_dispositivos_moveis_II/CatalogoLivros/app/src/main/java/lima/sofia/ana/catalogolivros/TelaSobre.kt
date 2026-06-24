@@ -35,7 +35,12 @@ fun TelaSobre(
             Text(text = "Suporte/Vendas", style = MaterialTheme.typography.titleMedium)
 
             Spacer(modifier = Modifier.height(8.dp))
+<<<<<<< HEAD
             
+=======
+
+            // Novo botão adicionado logo abaixo de Suporte/Vendas
+>>>>>>> bfb4cdddbcd1784ff955a63958d0ae49377dffe6
             Button(
                 onClick = onIrParaContatos,
                 modifier = Modifier.fillMaxWidth()
