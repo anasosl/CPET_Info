@@ -21,8 +21,10 @@
     <main class="container">
         <section id="empresa" class="aba ativa">
             <h1>Apresentação da Empresa</h1>
-            <img src="assets/logo.png" alt="Logo da BeautyConnect" class="logo-apresentacao">
-            <p>A BeautyConnect é uma plataforma desenvolvida para transformar consultores em empreendedores de alta performance. Facilitamos o controle de estoque das marcas Natura, Avon e O Boticário, automatizamos cálculos de lucro e integramos a comunicação entre proprietários e vendedores em um único ecossistema digital.</p>
+            <div class="apresentacao">
+                <img src="assets/logo.png" alt="Logo da BeautyConnect" class="logo-apresentacao">
+                <p>A BeautyConnect é uma plataforma desenvolvida para transformar consultores em empreendedores de alta performance. Facilitamos o controle de estoque das marcas Natura, Avon e O Boticário, automatizamos cálculos de lucro e integramos a comunicação entre proprietários e vendedores em um único ecossistema digital.</p>
+            </div>
         </section>
 
         <section id="produtos" class="aba">
@@ -44,20 +46,60 @@
         <section id="contato" class="aba">
             <h1>Contato</h1>
             <p>Entre em contato conosco para mais informações.</p>
-            <form id="contatoForm">
+            <form id="contatoForm" onsubmit="enviarMensagem(event)">
                 <input type="text" id="nome" placeholder="Seu Nome" required>
                 <input type="email" id="email" placeholder="Seu Email" required>
                 <textarea id="mensagem" placeholder="Sua Mensagem" required></textarea>
-                <button type="submit" class="btn-acao" onclick="enviarMensagem()">Enviar</button>
+                <button type="submit" class="btn-acao">Enviar</button>
             </form>
         </section>
 
         <section id="faq" class="aba">
-            <h1>Perguntas Frequentes</h1>
-            <details><summary>Qual a margem de lucro padrão?</summary><p>30% sobre o custo.</p></details>
-            <details><summary>Como funcionam os Conjuntos?</summary><p>Desconto de 10% para 2 ou mais itens.</p></details>
+            <h1>Perguntas Frequentes (FAQ)</h1>
+            <p class="faq-subtitulo">Tire suas dúvidas rápidas sobre o funcionamento da BeautyConnect.</p>
+            
+            <div class="faq-container">
+                <details class="faq-item">
+                    <summary class="faq-pergunta">Quais marcas posso gerenciar na plataforma?</summary>
+                    <div class="faq-resposta">
+                        <p>Atualmente, a BeautyConnect oferece suporte completo para o gerenciamento de estoques e vendas das marcas <strong>Natura, Avon e O Boticário</strong>.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-pergunta">Como funciona a lógica de divisão 50/50 do Painel de Gestão?</summary>
+                    <div class="faq-resposta">
+                        <p>O simulador calcula a divisão igualitária do lucro líquido entre a liderança/proprietário do estoque e a pessoa revendedora. O cálculo deduz o valor de custo informado e divide a margem restante igualmente (50% para cada).</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-pergunta">Como funcionam os descontos para Conjuntos (Kits)?</summary>
+                    <div class="faq-resposta">
+                        <p>Para incentivar as vendas casadas, o sistema aplica automaticamente um <strong>desconto de 10%</strong> no valor total sempre que 2 ou mais itens forem combinados em um mesmo conjunto/kit.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-pergunta">Qual é a margem de lucro padrão configurada?</summary>
+                    <div class="faq-resposta">
+                        <p>A plataforma adota uma margem padrão de <strong>30% sobre o valor de custo</strong> dos produtos para estimativa inicial de preço de venda, que pode ser ajustada conforme a estratégia da sua equipe.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-pergunta">Como faço para cadastrar novos vendedores na minha rede?</summary>
+                    <div class="faq-resposta">
+                        <p>A integração é feita pelo nosso ecossistema digital. Você pode enviar um convite de acesso direto pelo painel de controle (em breve disponível na aba de Gestão) para unificar a comunicação.</p>
+                    </div>
+                </details>
+            </div>
         </section>
     </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
     <script src="script.js"></script>
 </body>
