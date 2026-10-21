@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Tema Herdado do MaterialComponents -->
+    <style name="Theme.BeautyConnect" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Cores Principais -->
+        <item name="colorPrimary">#FF4081</item>
+        <item name="colorPrimaryVariant">#D4AF37</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+
+        <!-- Configuração de status bar transparente -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+</resources>

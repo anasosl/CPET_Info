@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_empresa"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:title="Empresa" />
+    <item
+        android:id="@+id/nav_produtos"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:title="Produtos" />
+    <item
+        android:id="@+id/nav_gestao"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:title="Gestão" />
+    <item
+        android:id="@+id/nav_contato"
+        android:icon="@android:drawable/ic_menu_send"
+        android:title="Contato" />
+    <item
+        android:id="@+id/nav_faq"
+        android:icon="@android:drawable/ic_menu_help"
+        android:title="FAQ" />
+</menu>
